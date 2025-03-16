@@ -1,6 +1,6 @@
 # hcr2-adventure-database
 
-# Made by Titanium Gaming HCR2 
+_ Made by Titanium Gaming HCR2 
 
 SQL code for storing Hill Climb Racing Adventure World Records into a database.
 
