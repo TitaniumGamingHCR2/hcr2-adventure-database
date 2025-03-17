@@ -72,8 +72,7 @@ INSERT INTO Vehicle VALUES
 (28, 'Superbike'),
 (29, 'Supercar'),
 (30, 'Moonlander'),
-(31, 'Eco Thrust Moonlander'),
-(32, 'Bolt');
+(31, 'Bolt');
 
 
 INSERT INTO Player VALUES
@@ -193,7 +192,8 @@ INSERT INTO Player VALUES
 (114, 'Nakkibiilo', 'Finland'),
 (115, 'GEN', 'Germany'),
 (116, 'Omega', 'Poland'),
-(117, 'Blake', 'Australia');
+(117, 'Blake', 'Australia'),
+(118, 'Mushroom', 'Russia');
 
 INSERT INTO Map VALUES 
 (1, 'Countryside', 0), 
@@ -412,7 +412,7 @@ INSERT INTO WorldRecord VALUES
 
 --mine 
 (7, 1, 7, 24856), 
-(7, 2, 30, 15644), 
+(7, 2, 36, 17670), 
 (7, 3, 7, 39910), 
 (7, 4, 1, 16232), 
 (7, 5, 7, 21542),
@@ -463,7 +463,7 @@ INSERT INTO WorldRecord VALUES
 (8, 18, 14, 40022), 
 (8, 19, 48, 39390), 
 (8, 20, 20, 125434), 
-(8, 21, 96, 53319),
+(8, 21, 82, 79668),
 (8, 22, 5, 41268), 
 (8, 23, 5, 82880), 
 (8, 24, 70, 73543),
@@ -511,7 +511,7 @@ INSERT INTO WorldRecord VALUES
 (10, 2, 85, 32434),
 (10, 3, 14, 45083), 
 (10, 4, 5, 26986), 
-(10, 5, 5, 33752), 
+(10, 5, 5, 33571), 
 (10, 6, 22, 63600), 
 (10, 7, 8, 31749), 
 (10, 8, 5, 48805),
@@ -630,7 +630,7 @@ INSERT INTO WorldRecord VALUES
 (13, 24, 30, 20274),
 (13, 25, 10, 11234),
 (13, 26, 47, 59337),
-(13, 27, 30, 46643), 
+(13, 27, 38, 46643), 
 (13, 28, 30, 11234), 
 (13, 29, 38, 11383),
 (13, 30, 6, 10558),
