@@ -194,7 +194,9 @@ INSERT INTO Player VALUES
 (116, 'Omega', 'Poland'),
 (117, 'Blake', 'Australia'),
 (118, 'Mushroom', 'Russia'),
-(119, 'Kuba', 'Poland');
+(119, 'Kuba', 'Poland'),
+(120, 'Joplin', 'USA'),
+(121, 'Zoda', 'Belgium');
 
 INSERT INTO Map VALUES 
 (1, 'Countryside', 0), 
@@ -514,7 +516,7 @@ INSERT INTO WorldRecord VALUES
 (10, 2, 85, 32434),
 (10, 3, 14, 45083), 
 (10, 4, 5, 26986), 
-(10, 5, 5, 33571), 
+(10, 5, 120, 35937), 
 (10, 6, 22, 63600), 
 (10, 7, 8, 31749), 
 (10, 8, 5, 48805),
