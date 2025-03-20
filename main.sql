@@ -1028,3 +1028,11 @@ WHERE (distance >= 5000 AND special == 1)
 GROUP BY nameVehicle
 ORDER BY total_special_5ks DESC;
 */
+
+-- request to order vehicles by average placement in all maps 
+
+/*
+WITH Placements AS (
+  SELECT nameVehicle, RANK() OVER (PARTITION BY idMap ORDER BY distance DESC) as place FROM Vehicle JOIN WorldRecord USING (idVehicle)) 
+SELECT nameVehicle, round(avg(place), 2) as average_place FROM Placements GROUP BY nameVehicle ORDER BY average_place;
+*/
