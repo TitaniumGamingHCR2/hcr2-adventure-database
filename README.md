@@ -22,7 +22,7 @@ This is where all the code is stored. Copy the code entirely.
 
 ### Find something that runs SQL
 
-Search for a SQL compiler online (there are many cool ones online) or any software that runs SQL.
+Search for a SQL compiler online (there are many cool ones online,  like this : https://www.programiz.com/sql/online-compiler/ ) or any software that runs SQL.
 
 Paste the entire code on the SQL console.
 
