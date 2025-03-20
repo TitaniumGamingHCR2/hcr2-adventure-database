@@ -442,7 +442,7 @@ INSERT INTO WorldRecord VALUES
 (7, 24, 7, 21703), 
 (7, 25, 7, 12239),
 (7, 26, 7, 65614), 
-(7, 27, 22, 36478),
+(7, 27, 22, 40694),
 (7, 28, 66, 12157),
 (7, 29, 6, 15621),
 (7, 30, 7, 9458), 
@@ -694,7 +694,7 @@ INSERT INTO WorldRecord VALUES
 (15, 19, 1, 10643), 
 (15, 20, 8, 22833),
 (15, 21, 1, 20533),
-(15, 22, 1, 11099),
+(15, 22, 26, 11138),
 (15, 23, 5, 20725),
 (15, 24, 5, 20699),
 (15, 25, 6, 10571),
@@ -1033,8 +1033,13 @@ ORDER BY total_special_5ks DESC;
 
 /*
 WITH Placements AS (
-  SELECT nameVehicle, RANK() OVER (PARTITION BY idMap ORDER BY distance DESC) as place FROM Vehicle JOIN WorldRecord USING (idVehicle)) 
-SELECT nameVehicle, round(avg(place), 2) as average_place FROM Placements GROUP BY nameVehicle ORDER BY average_place;
+  SELECT nameVehicle, RANK() OVER (PARTITION BY idMap ORDER BY distance DESC) as place 
+FROM Vehicle JOIN WorldRecord USING (idVehicle)
+) 
+SELECT nameVehicle, round(avg(place), 2) as average_place 
+FROM Placements 
+GROUP BY nameVehicle 
+ORDER BY average_place;
 */
 
 -- request to get worst map for each vehicle 
