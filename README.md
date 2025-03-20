@@ -18,11 +18,11 @@ The inserted data is constantly updated to have all World Records up to date.
 
 ### Go to main.sql
 
-This is where all the code is stored. Copy the code entirely.
+This is where all the code is stored. Copy the code in main.sql entirely.
 
 ### Find something that runs SQL
 
-Search for a SQL compiler online (there are many cool ones online,  like this : https://www.programiz.com/sql/online-compiler/ ) or any software that runs SQL.
+Then, search for a SQL compiler online (there are many cool ones online,  like this : https://www.programiz.com/sql/online-compiler/ ) or any software that runs SQL.
 
 Paste the entire code on the SQL console.
 
