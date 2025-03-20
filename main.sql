@@ -1036,3 +1036,35 @@ WITH Placements AS (
   SELECT nameVehicle, RANK() OVER (PARTITION BY idMap ORDER BY distance DESC) as place FROM Vehicle JOIN WorldRecord USING (idVehicle)) 
 SELECT nameVehicle, round(avg(place), 2) as average_place FROM Placements GROUP BY nameVehicle ORDER BY average_place;
 */
+
+-- request to get worst map for each vehicle 
+
+/*
+WITH Placements AS (
+  SELECT nameVehicle, idMap,
+  RANK() OVER (PARTITION BY idMap ORDER BY distance DESC) as place 
+  FROM Vehicle JOIN WorldRecord USING (idVehicle)
+)
+
+SELECT nameVehicle, max(place) as worst_place, nameMap 
+FROM Placements 
+JOIN Map USING (idMap)
+GROUP BY nameVehicle
+ORDER BY worst_place;
+*/
+
+-- request to get best map for each vehicle 
+
+/*
+WITH Placements AS (
+  SELECT nameVehicle, idMap,
+  RANK() OVER (PARTITION BY idMap ORDER BY distance DESC) as place 
+  FROM Vehicle JOIN WorldRecord USING (idVehicle)
+)
+
+SELECT nameVehicle, min(place) as best_place, nameMap 
+FROM Placements 
+JOIN Map USING (idMap)
+GROUP BY nameVehicle
+ORDER BY best_place;
+*/
