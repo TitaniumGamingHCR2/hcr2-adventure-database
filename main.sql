@@ -197,7 +197,8 @@ INSERT INTO Player VALUES
 (119, 'Kuba', 'Poland'),
 (120, 'Joplin', 'USA'),
 (121, 'Zoda', 'Belgium'),
-(122, 'Humood', 'Saudi Arabia');
+(122, 'Humood', 'Saudi Arabia'),
+(123, 'Yoyo14', 'France');
 
 INSERT INTO Map VALUES 
 (1, 'Countryside', 0), 
@@ -479,6 +480,7 @@ INSERT INTO WorldRecord VALUES
 (8, 28, 81, 11013),
 (8, 29, 2, 33682), 
 (8, 30, 110, 10870),
+(8, 31, 123, 22793),
 
 --beach 
 (9, 1, 53, 53711),
@@ -511,6 +513,7 @@ INSERT INTO WorldRecord VALUES
 (9, 28, 55, 18854),
 (9, 29, 75, 18861),
 (9, 30, 29, 6584),
+(9, 31, 97, 43567),
 
  --bog 
 (10, 1, 5, 46036),
