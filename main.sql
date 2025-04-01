@@ -76,6 +76,7 @@ INSERT INTO Vehicle VALUES
 
 
 INSERT INTO Player VALUES
+(0, '___','___'),
 (1, 'Zorro', 'Germany'),
 (2, 'Kosbow', 'Russia'),
 (3, 'Illka', 'Russia'),
@@ -199,7 +200,8 @@ INSERT INTO Player VALUES
 (121, 'Zoda', 'Belgium'),
 (122, 'Humood', 'Saudi Arabia'),
 (123, 'Yoyo14', 'France'),
-(124, 'Puma', 'Austria');
+(124, 'Puma', 'Austria'),
+(125, 'Vereshchak', 'Ukraine');
 
 INSERT INTO Map VALUES 
 (1, 'Countryside', 0), 
@@ -257,6 +259,7 @@ INSERT INTO WorldRecord VALUES
 (1, 28, 11, 9584), 
 (1, 29, 6, 9695), 
 (1, 30, 6, 7696), 
+(1, 31, 125, 9798),
 
 --forest
 (2, 1, 3, 37321), 
@@ -289,6 +292,7 @@ INSERT INTO WorldRecord VALUES
 (2, 28, 74, 18608),
 (2, 29, 2, 22218), 
 (2, 30, 67, 19789),
+(2, 31, 0, 22980),
 
 --city
 (3, 1, 3, 21747), 
@@ -321,6 +325,7 @@ INSERT INTO WorldRecord VALUES
 (3, 28, 13, 17819), 
 (3, 29, 13, 19662),
 (3, 30, 3, 11402), 
+(3, 31, 125, 10952),
 
 --mtn
 (4, 1, 3, 10749), 
@@ -353,6 +358,7 @@ INSERT INTO WorldRecord VALUES
 (4, 28, 35, 10142), 
 (4, 29, 1, 10514), 
 (4, 30, 29, 10481), 
+(4, 31, 0, 10482),
 
 --reef
 (5, 1, 32, 27441), 
@@ -417,6 +423,7 @@ INSERT INTO WorldRecord VALUES
 (6, 28, 1, 10672),
 (6, 29, 2, 11595), 
 (6, 30, 1, 8792),
+(6, 31, 0, 14314),
 
 --mines
 (7, 1, 7, 24856), 
@@ -482,7 +489,7 @@ INSERT INTO WorldRecord VALUES
 (8, 28, 81, 11013),
 (8, 29, 2, 33682), 
 (8, 30, 110, 10870),
-(8, 31, 123, 22793),
+(8, 31, 0, 30505),
 
 --beach 
 (9, 1, 53, 53711),
@@ -544,10 +551,11 @@ INSERT INTO WorldRecord VALUES
 (10, 24, 5, 45039),
 (10, 25, 8, 11637), 
 (10, 26, 22, 117484), 
-(10, 27, 60, 153823), 
+(10, 27, 53, 158063), 
 (10, 28, 81, 15557),
 (10, 29, 1, 15514), 
 (10, 30, 6, 8151), 
+(10, 31, 0, 16959),
 
 --rg 
 (11, 1, 10, 20650), 
@@ -806,6 +814,7 @@ INSERT INTO WorldRecord VALUES
 (18, 28, 35, 10276),
 (18, 29, 6, 23119),
 (18, 30, 6, 9306), 
+(18, 31, 0, 13006),
 
 --ft 
 (19, 1, 1, 5365), 
@@ -870,6 +879,7 @@ INSERT INTO WorldRecord VALUES
 (20, 28, 2, 3826), 
 (20, 29, 1, 4723), 
 (20, 30, 6, 3847), 
+(20, 31, 0, 2734),
 
 --rw 
 (21, 1, 28, 3917), 
