@@ -206,7 +206,8 @@ INSERT INTO Player VALUES
 (127, 'Rolo', 'Hungary'),
 (128, 'Rick Tripledick', 'USA'),
 (129, 'Speed Michi', 'Austria'),
-(130, 'Element', 'Australia');
+(130, 'Element', 'Australia'),
+(131, 'Kuba', 'Poland');
 
 INSERT INTO Map VALUES 
 (1, 'Countryside', 0), 
@@ -301,7 +302,7 @@ INSERT INTO WorldRecord VALUES
 
 --city
 (3, 1, 3, 21747), 
-(3, 2, 13, 22260), 
+(3, 2, 3, 25373), 
 (3, 3, 21, 28896), 
 (3, 4, 13, 17059), 
 (3, 5, 3, 21294), 
