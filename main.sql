@@ -210,7 +210,8 @@ INSERT INTO Player VALUES
 (131, 'Kuba', 'Poland'),
 (132, '3XTR3M3', 'Poland'),
 (133, 'Oscar', 'USA'),
-(134, 'Peace', 'Czech Republic');
+(134, 'Peace', 'Czech Republic'),
+(135, 'Fisch HCR2', 'Germany');
 
 INSERT INTO Map VALUES 
 (1, 'Countryside', 0), 
@@ -232,7 +233,7 @@ INSERT INTO Map VALUES
 (17, 'Cuptown', 0), 
 (18, 'Sky Rock Outpost', 0), 
 (19, 'Forest Trials', 1), 
-(20, 'Intense City', 1), 
+(20, 'Intense City', 1),
 (21, 'Raging Winter', 1); 
 
 INSERT INTO WorldRecord VALUES 
@@ -367,7 +368,7 @@ INSERT INTO WorldRecord VALUES
 (4, 28, 35, 10142), 
 (4, 29, 1, 10514), 
 (4, 30, 29, 10481), 
-(4, 31, 22, 12204),
+(4, 31, 135, 12333),
 
 --reef
 (5, 1, 32, 27441), 
@@ -400,7 +401,7 @@ INSERT INTO WorldRecord VALUES
 (5, 28, 34, 11283),
 (5, 29, 6, 12594),
 (5, 30, 107, 11209),
-(5, 31, 0, 14056),
+(5, 31, 135, 14056),
 
 --winter 
 (6, 1, 2, 23807), 
@@ -444,7 +445,7 @@ INSERT INTO WorldRecord VALUES
 (7, 6, 30, 21708), 
 (7, 7, 7, 23866), 
 (7, 8, 7, 24841), 
-(7, 9, 30, 18768),
+(7, 9, 30, 21345),
 (7, 10, 7, 21626),
 (7, 11, 1, 21287),
 (7, 12, 1, 21705),
