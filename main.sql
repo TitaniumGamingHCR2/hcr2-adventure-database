@@ -32,7 +32,7 @@ CREATE TABLE WorldRecord(
     idVehicle INT,
     idPlayer INT NOT NULL,
     distance INT NOT NULL,
-    current TINYINT NOT NULL
+    current TINYINT NOT NULL,
     PRIMARY KEY (idVehicle, idMap, current),
     FOREIGN KEY (idVehicle) REFERENCES Vehicle(idVehicle),
     FOREIGN KEY (idMap) REFERENCES Map(idMap),
@@ -933,10 +933,8 @@ INSERT INTO WorldRecord VALUES
 (21, 28, 99, 3475,1),
 (21, 29, 101, 3719,1),
 (21, 30, 6, 3684,1),
-(21, 31, 135, 2403,1);
+(21, 31, 135, 2403,1),
 
-
-/*
 non mastery (unfinished)... 
 
 (1, 9, 6, 14043, 0),
@@ -970,20 +968,19 @@ non mastery (unfinished)...
 (17, 10, 1, 10706, 0), 
 (18, 10, 1, 13483, 0),
 (19, 10, 1, 4791, 0),
-(21, 10, 1, 3792, 0),
-
-*/
+(21, 10, 1, 3792, 0);
 
 
 
 -- STATEMENTS
 
--- request to order all WRs by distance
+-- request to order all current WRs by distance
 /*
 SELECT nameVehicle, nameMap, namePlayer, distance
     FROM Vehicle JOIN WorldRecord USING (idVehicle)
     JOIN Map USING (idMap) 
     JOIN Player USING (idPlayer)
+    WHERE current == 1
     ORDER BY distance DESC;
 */
     
@@ -998,33 +995,36 @@ SELECT nameVehicle, nameMap, namePlayer, distance
 */
     
  
--- request to list all players by WRs
+-- request to list all players by current WRs
 /*
 SELECT namePlayer, count(*) AS total_records
     FROM Player JOIN WorldRecord USING (idPlayer)
+WHERE current == 1
 GROUP BY namePlayer
 ORDER BY count(*) DESC;
 */
 
--- request to list all countries by WRs
+-- request to list all countries by current WRs
 /*
 SELECT country, count(*) AS total_records
     FROM Player JOIN WorldRecord USING (idPlayer)
+WHERE current == 1
 GROUP BY country
 ORDER BY count(*) DESC;
 */
 
--- request to list all maps by all-vehicle
+-- request to list all maps by current all-vehicle
 /*
 SELECT nameMap, max(distance) AS all_vehicle, nameVehicle, namePlayer
     FROM Vehicle JOIN WorldRecord USING (idVehicle)
     JOIN Map USING (idMap) 
     JOIN Player USING (idPlayer)
+WHERE current == 1
 GROUP BY nameMap
 ORDER BY max(distance) DESC;
 */
 
--- request to list all vehicles by longest distance
+-- request to list all vehicles by current longest distance
 /*
 SELECT V.nameVehicle, WR.distance AS longest_distance, M.nameMap, P.namePlayer
 FROM WorldRecord WR
@@ -1034,7 +1034,7 @@ JOIN Player P ON WR.idPlayer = P.idPlayer
 WHERE WR.distance = (
     SELECT MAX(distance)
     FROM WorldRecord
-    WHERE idVehicle = WR.idVehicle
+    WHERE idVehicle = WR.idVehicle and current == 1
 )
 ORDER BY WR.distance DESC;
 */
@@ -1044,14 +1044,17 @@ ORDER BY WR.distance DESC;
 SELECT nameVehicle, round(avg(distance)) as average_distance 
 FROM Vehicle JOIN WorldRecord USING (idVehicle)
     JOIN Map USING (idMap) 
+WHERE current == 1
 GROUP BY nameVehicle 
 ORDER BY average_distance DESC;
 */
+
 -- request to get sum of all distances of every vehicle 
 /*
 SELECT nameVehicle, sum(distance) as sum_records
 FROM Vehicle JOIN WorldRecord USING (idVehicle)
     JOIN Map USING (idMap) 
+WHERE current == 1
 GROUP BY nameVehicle 
 ORDER BY sum_records DESC;
 */
@@ -1063,6 +1066,7 @@ SELECT nameMap, max(distance) AS all_vehicle, nameVehicle, idPlayer
     FROM Vehicle JOIN WorldRecord USING (idVehicle)
     JOIN Map USING (idMap) 
     JOIN Player USING (idPlayer)
+WHERE current == 1
 GROUP BY nameMap
 )
 SELECT namePlayer, count(*) AS total_allvehicles
@@ -1078,6 +1082,7 @@ SELECT nameMap, max(distance) AS all_vehicle, idVehicle
     FROM Vehicle JOIN WorldRecord USING (idVehicle)
     JOIN Map USING (idMap) 
     JOIN Player USING (idPlayer)
+WHERE current == 1
 GROUP BY nameMap
 )
 SELECT nameVehicle, count(*) AS total_allvehicles
@@ -1092,7 +1097,7 @@ SELECT nameVehicle, count(*) AS total_10ks
     FROM Vehicle JOIN WorldRecord USING (idVehicle)
     JOIN Map USING (idMap) 
     JOIN Player USING (idPlayer)
-WHERE (distance >= 10000 AND special == 0)
+WHERE (distance >= 10000 AND special == 0 AND current == 1)
 GROUP BY nameVehicle
 ORDER BY total_10ks DESC;
 */
@@ -1104,7 +1109,7 @@ SELECT nameVehicle, count(*) AS total_special_5ks
     FROM Vehicle JOIN WorldRecord USING (idVehicle)
     JOIN Map USING (idMap) 
     JOIN Player USING (idPlayer)
-WHERE (distance >= 5000 AND special == 1)
+WHERE (distance >= 5000 AND special == 1 AND current == 1)
 GROUP BY nameVehicle
 ORDER BY total_special_5ks DESC;
 */
@@ -1113,7 +1118,7 @@ ORDER BY total_special_5ks DESC;
 
 /*
 WITH Placements AS (
-  SELECT nameVehicle, RANK() OVER (PARTITION BY idMap ORDER BY distance DESC) as place 
+  SELECT nameVehicle, RANK() OVER (PARTITION BY idMap WHERE current == 1 ORDER BY distance DESC) as place 
 FROM Vehicle JOIN WorldRecord USING (idVehicle)
 ) 
 SELECT nameVehicle, round(avg(place), 2) as average_place 
@@ -1127,7 +1132,7 @@ ORDER BY average_place;
 /*
 WITH Placements AS (
   SELECT nameVehicle, idMap,
-  RANK() OVER (PARTITION BY idMap ORDER BY distance DESC) as place 
+  RANK() OVER (PARTITION BY idMap WHERE current == 1 ORDER BY distance DESC) as place 
   FROM Vehicle JOIN WorldRecord USING (idVehicle)
 )
 
@@ -1143,7 +1148,7 @@ ORDER BY worst_place;
 /*
 WITH Placements AS (
   SELECT nameVehicle, idMap,
-  RANK() OVER (PARTITION BY idMap ORDER BY distance DESC) as place 
+  RANK() OVER (PARTITION BY idMap WHERE current == 1 ORDER BY distance DESC) as place 
   FROM Vehicle JOIN WorldRecord USING (idVehicle)
 )
 
