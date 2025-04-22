@@ -935,7 +935,7 @@ INSERT INTO WorldRecord VALUES
 (21, 30, 6, 3684,1),
 (21, 31, 135, 2403,1),
 
-non mastery (unfinished)... 
+--non mastery (unfinished)... 
 
 (1, 9, 6, 14043, 0),
 (1, 10, 6, 12146, 0),
@@ -1088,7 +1088,7 @@ GROUP BY nameMap
 SELECT nameVehicle, count(*) AS total_allvehicles
     FROM Vehicle JOIN AllVehicle USING (idVehicle)
 GROUP BY nameVehicle 
-ORDER BY count(*) DES
+ORDER BY count(*) DESC;
 */
 
 -- request to order vehicles by total 10ks
@@ -1118,8 +1118,9 @@ ORDER BY total_special_5ks DESC;
 
 /*
 WITH Placements AS (
-  SELECT nameVehicle, RANK() OVER (PARTITION BY idMap WHERE current == 1 ORDER BY distance DESC) as place 
+  SELECT nameVehicle, RANK() OVER (PARTITION BY idMap ORDER BY distance DESC) as place 
 FROM Vehicle JOIN WorldRecord USING (idVehicle)
+WHERE current == 1
 ) 
 SELECT nameVehicle, round(avg(place), 2) as average_place 
 FROM Placements 
@@ -1132,8 +1133,9 @@ ORDER BY average_place;
 /*
 WITH Placements AS (
   SELECT nameVehicle, idMap,
-  RANK() OVER (PARTITION BY idMap WHERE current == 1 ORDER BY distance DESC) as place 
+  RANK() OVER (PARTITION BY idMap ORDER BY distance DESC) as place 
   FROM Vehicle JOIN WorldRecord USING (idVehicle)
+  WHERE current == 1
 )
 
 SELECT nameVehicle, max(place) as worst_place, nameMap 
@@ -1148,8 +1150,9 @@ ORDER BY worst_place;
 /*
 WITH Placements AS (
   SELECT nameVehicle, idMap,
-  RANK() OVER (PARTITION BY idMap WHERE current == 1 ORDER BY distance DESC) as place 
+  RANK() OVER (PARTITION BY idMap ORDER BY distance DESC) as place 
   FROM Vehicle JOIN WorldRecord USING (idVehicle)
+  WHERE current == 1
 )
 
 SELECT nameVehicle, min(place) as best_place, nameMap 
