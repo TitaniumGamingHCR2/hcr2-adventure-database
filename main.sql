@@ -2,7 +2,10 @@
 
 -- TABLE CREATION 
 
-DROP TABLE IF EXISTS WorldRecord, Player, Vehicle, Map;
+DROP TABLE IF EXISTS WorldRecord;
+DROP TABLE IF EXISTS Player;
+DROP TABLE IF EXISTS Vehicle;
+DROP TABLE IF EXISTS Map;
 
 CREATE TABLE Player(
     idPlayer INT PRIMARY KEY,
@@ -387,7 +390,7 @@ INSERT INTO WorldRecord VALUES
 (5, 6, 20, 18464,1), 
 (5, 7, 52, 17307,1),
 (5, 8, 20, 68775,1),
-(5, 9, 45, 16492,1),
+(5, 9, 45, 18665,1),
 (5, 10, 12, 26387,1), 
 (5, 11, 16, 22500,1), 
 (5, 12, 1, 49165,1),
@@ -405,7 +408,7 @@ INSERT INTO WorldRecord VALUES
 (5, 24, 32, 40437,1), 
 (5, 25, 3, 12577,1),
 (5, 26, 32, 102145,1), 
-(5, 27, 107, 31653,1),
+(5, 27, 45, 38453,1),
 (5, 28, 34, 11283,1),
 (5, 29, 6, 12594,1),
 (5, 30, 107, 11209,1),
